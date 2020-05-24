@@ -1,0 +1,136 @@
+body {
+    font-family: "Oxygen";
+}
+
+.containerOuter {
+    width: 100%;
+}
+.container {
+    width: 60%;
+    overflow: auto;
+    text-align: center;
+    margin: auto;
+    /* border: 1px dotted green; */
+}
+.canvasContainer {
+    overflow: auto;
+    margin: 10px;
+    margin-bottom: 50px;
+    /* border: 1px dotted green; */
+}
+
+#treeCanvas {
+    font-family: "Oxygen";
+}
+
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    /* border: 1px dotted green; */
+    padding: 10px;
+}
+
+.category {
+    border: 1px solid #6fcfb9;
+    width: 22%;
+    height: 150px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.category-header {
+    border-bottom: 1px solid #6fcfb9;
+    height: 20%;
+    width: 90%;
+    line-height: 200%;
+    margin: auto;
+    text-align: center;
+}
+
+.category-header .title {
+    color: #135072;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.category-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
+}
+
+.item-container {
+    border: 1px dotted green;
+}
+
+.category-body .item {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    color: #135072;
+    font-size: 12px;
+}
+.category-body .item:hover {
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    z-index: 10;
+    background-color: white;
+    width: 700px;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.modal-header .close-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Oxygen"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="containerOuter">
+            <div class="container">
+                <div class="canvasContainer">
+                    <canvas id="treeCanvas" width="600" height="300"></canvas>
+                </div>
+                <div class="categories">
+                    <div class="category" id="biopharmaceuticals">
+                        <div class="category-header">
+                            <div class="title">Biopharmaceuticals</div>
+                        </div>
+                        <div class="category-body">
+                            <button
+                                data-modal-target="#modal-antibody-production"
+                                class="item"
+                                id="antibody-production"
+                            >
+                                Antibody Production
+                            </button>
+                            <button class="item" id="medicines">
+                                Medicines
+                            </button>
+                            <button class="item" id="microbiome">
+                                Microbiome
+                            </button>
+                            <button class="item" id="recombinant-proteins">
+                                Recombinant Proteins
+                            </button>
+                            <button class="item" id="viral-production">
+                                Viral Production
+                            </button>
+                            <button class="item" id="vaccines">
+                                Vaccines
+                            </button>
+                        </div>
+                    </div>
+                    <div class="category" id="foods">
+                        <div class="category-header">
+                            <div class="title">Foods</div>
+                        </div>
+                        <div class="category-body">
+                            <button class="item" id="alternative-proteins">
+                                Alternative Proteins
+                            </button>
+                            <button class="item" id="artificial-meats">
+                                Artificial Meats
+                            </button>
+                            <button class="item" id="fermented-beverages">
+                                Fermented Beverages
+                            </button>
+                            <button class="item" id="supplements">
+                                Supplements
+                            </button>
+                        </div>
+                    </div>
+                    <div class="category" id="environmental-sciences">
+                        <div class="category-header">
+                            <div class="title">Environmental Sciences</div>
+                        </div>
+                        <div class="category-body">
+                            <button class="item" id="agriculture">
+                                Agriculture
+                            </button>
+                            <button class="item" id="biofuels">
+                                Biofuels
+                            </button>
+                            <button class="item" id="bioplastics">
+                                Bioplastics
+                            </button>
+                            <button class="item" id="pesticides">
+                                Pesticides
+                            </button>
+                        </div>
+                    </div>
+                    <div class="category" id="industrial-process">
+                        <div class="category-header">
+                            <div class="title">Industrial Process</div>
+                        </div>
+                        <div class="category-body">
+                            <button class="item" id="carriers">
+                                Carriers
+                            </button>
+                            <button class="item" id="biomaterials">
+                                Biomaterials
+                            </button>
+                            <button class="item" id="nanomaterials">
+                                Nanomaterials
+                            </button>
+                            <button class="item" id="preservatives">
+                                Preservatives
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button data-modal-target="#modal-test">open test modal</button>
+        <div class="modal" id="modal-test">
+            <div class="modal-header">
+                <div class="title">Test Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Rerum alias corrupti veniam cumque! Ipsa accusantium error
+                    reiciendis sunt magnam odit veniam, corrupti quidem nam iste
+                    excepturi id at, enim eligendi.
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal-antibody-production">
+            <div class="modal-header">
+                <div class="title">Biopharmaceuticals: Antibody Production</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="text">
+                    Antibodies are produced by specialized white blood cells
+                    called B lymphocytes (or B cells). When an antigen binds to
+                    the B-cell surface, it stimulates the B cell to divide and
+                    mature into a group of identical cells called a clone.
+                </div>
+            </div>
+        </div>
+        <div id="overlay"></div>
+        <script src="tree.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
