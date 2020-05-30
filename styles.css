@@ -34,18 +34,18 @@ body {
 .category {
     border: 1px solid #6fcfb9;
     width: 22%;
-    height: 150px;
+    height: 175px;
     padding: 3px;
     border-radius: 10px;
 }
 
 .category-header {
     border-bottom: 1px solid #6fcfb9;
-    height: 20%;
+    height: 15%;
     width: 90%;
-    line-height: 200%;
     margin: auto;
     text-align: center;
+    padding-top: 8px;
 }
 
 .category-header .title {
@@ -58,7 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 80%;
+    height: 85%;
 }
 
 .item-container {
@@ -72,6 +72,7 @@ body {
     background: none;
     color: #135072;
     font-size: 12px;
+    padding: 1px;
 }
 .category-body .item:hover {
     font-weight: bold;

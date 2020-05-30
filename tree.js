@@ -121,17 +121,17 @@ function createBranches() {
         "#000000",
         "Algae"
     );
-    var unknown = createBranch(
+    var mammalian = createBranch(
         fungi,
         algae.fromRoot + 40,
         -90,
         75,
         "#000000",
-        "Unknown"
+        "Mammalian"
     );
     var insect = createBranch(
-        unknown,
-        unknown.length / 2,
+        mammalian,
+        mammalian.length / 2,
         75,
         40,
         "#000000",
@@ -146,7 +146,17 @@ function createBranches() {
         "Yeast"
     );
 
-    return [root, e_coli, cyan, bacillus, fungi, algae, unknown, insect, yeast];
+    return [
+        root,
+        e_coli,
+        cyan,
+        bacillus,
+        fungi,
+        algae,
+        mammalian,
+        insect,
+        yeast,
+    ];
 }
 
 function getLabelData(branch, margin, textWidth, textSize) {
@@ -238,20 +248,53 @@ async function handleSelection(label, clicked) {
     //await clearSelection(tree);
     switch (label) {
         case "Cyanobacteria":
-            if (!clicked) {
-                document.getElementById(
-                    "biopharmaceuticals"
-                ).style.borderWidth = "2px";
-                document.getElementById("biopharmaceuticals").style.padding =
-                    "2px";
-            } else {
-                document.getElementById(
-                    "biopharmaceuticals"
-                ).style.borderWidth = "3px";
-                document.getElementById("biopharmaceuticals").style.padding =
-                    "1px";
-            }
-            document.getElementById("antibody-production").style.color = "blue";
+            activateCategories(["environmental-sciences"], clicked);
+            activateItems(["agriculture", "biofuels", "bioplastics"], clicked);
+            break;
+        case "E Coli":
+            activateCategories(
+                [
+                    "biopharmaceuticals",
+                    "environmental-sciences",
+                    "industrial-process",
+                ],
+                clicked
+            );
+            activateItems(["medicines", "viral-production"], clicked);
+            break;
+        case "Bacillus":
+            activateCategories(["biopharmaceuticals"], clicked);
+            activateItems(["recombinant-proteins"], clicked);
+            break;
+        case "Mammalian":
+            activateCategories(["biopharmaceuticals", "foods"], clicked);
+            activateItems(
+                [
+                    "antibody-production",
+                    "medicines",
+                    "recombinant-proteins",
+                    "viral-production",
+                    "vaccines",
+                    "artificial-meats",
+                ],
+                clicked
+            );
+            break;
+        case "Insect":
+            activateCategories(["biopharmaceuticals"], clicked);
+            break;
+        case "Fungi":
+            activateCategories(["biopharmaceuticals"], clicked);
+            break;
+        case "Yeast":
+            activateCategories(["biopharmaceuticals", "foods"], clicked);
+            activateItems(
+                ["alternative-proteins", "fermented-beverages"],
+                clicked
+            );
+            break;
+        case "Algae":
+            activateCategories(["environmental-sciences"], clicked);
     }
     await tree.branches.forEach((branch) => {
         if (branch.label == label) {
@@ -264,11 +307,35 @@ async function handleSelection(label, clicked) {
     await render();
 }
 
+function activateCategories(ids, activate) {
+    ids.forEach((id) => {
+        var element = document.getElementById(id);
+        if (!activate) {
+            element.style.borderWidth = "2px";
+            element.style.padding = "2px";
+        } else {
+            element.style.borderWidth = "3px";
+            element.style.padding = "1px";
+        }
+    });
+}
+
+function activateItems(ids, activate) {
+    ids.forEach((id) => {
+        var element = document.getElementById(id);
+        //element.style.color = "blue";
+        element.style.fontSize = "15px";
+        element.style.padding = "0px";
+    });
+}
+
 async function clearSelection() {
     console.log("clearSelection()");
-    document
-        .querySelectorAll(".item")
-        .forEach((item) => (item.style.color = ""));
+    document.querySelectorAll(".item").forEach((item) => {
+        item.style.color = "";
+        item.style.fontSize = "";
+        item.style.padding = "";
+    });
     document.querySelectorAll(".category").forEach((category) => {
         category.style.borderWidth = "";
         category.style.padding = "";
