@@ -324,8 +324,10 @@ function activateItems(ids, activate) {
     ids.forEach((id) => {
         var element = document.getElementById(id);
         //element.style.color = "blue";
-        element.style.fontSize = "15px";
-        element.style.padding = "0px";
+        // element.style.fontSize = "15px";
+        // element.style.padding = "0px";
+        element.style.color = "#6fcfb9";
+        element.style.textDecoration = "underline";
     });
 }
 
@@ -335,6 +337,7 @@ async function clearSelection() {
         item.style.color = "";
         item.style.fontSize = "";
         item.style.padding = "";
+        item.style.textDecoration = "";
     });
     document.querySelectorAll(".category").forEach((category) => {
         category.style.borderWidth = "";

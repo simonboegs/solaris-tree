@@ -6,7 +6,7 @@ body {
     width: 100%;
 }
 .container {
-    width: 60%;
+    width: 80%;
     overflow: auto;
     text-align: center;
     margin: auto;
@@ -34,7 +34,7 @@ body {
 .category {
     border: 1px solid #6fcfb9;
     width: 22%;
-    height: 175px;
+    height: 200px;
     padding: 3px;
     border-radius: 10px;
 }
@@ -51,7 +51,7 @@ body {
 .category-header .title {
     color: #135072;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .category-body {
@@ -71,7 +71,7 @@ body {
     outline: none;
     background: none;
     color: #135072;
-    font-size: 12px;
+    font-size: 15px;
     padding: 1px;
 }
 .category-body .item:hover {
